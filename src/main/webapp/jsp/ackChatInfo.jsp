@@ -16,7 +16,7 @@
 	}
 	
 	var ackSocket;
-	utils.postAjax("startackChatServer.do",null,function(){
+	/* utils.postAjax("startackChatServer.do",null,function(){
 		ackSocket = io.connect("http://localhost:9093");
 		ackSocket.on('connect', function() {
 			showInfo("ackContent","===>Client has connected to the server<===\n");
@@ -47,7 +47,7 @@
 		    	ackServerCallback();
 		    }
 		});
-	});
+	}); */
 		
 	var sendAck = function(){
 		var jsonObject = {	

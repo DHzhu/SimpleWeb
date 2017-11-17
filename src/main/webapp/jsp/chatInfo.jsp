@@ -17,7 +17,7 @@
 	
 	var chatSocket;
 	
-	utils.postAjax("startChatServer.do",null,function(){
+	/* utils.postAjax("startChatServer.do",null,function(){
 		
 		chatSocket = io.connect("http://localhost:9092");
 		chatSocket.on("connect", function() {
@@ -30,7 +30,7 @@
 			chatSocket.disconnect();
 			showInfo("chatContent","===>The client has disconnected!<===\n");
 		});
-	});
+	}); */
 	
 	var sendChat = function(){
 		var jsonObject = {
