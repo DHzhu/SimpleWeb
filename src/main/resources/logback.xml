@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>	
+	<!-- ########################==CONSOLE_Log==######################### -->
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+	    <Target>System.out</Target>
+	    <encoder>
+	      <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} [%file:%line] %msg%n</pattern>
+	    </encoder>
+  	</appender>
+  	
+	<!-- ########################==Mongo_Log==######################### -->
+	<appender name="mongodb" class="ch.qos.logback.core.rolling.RollingFileAppender">
+	    <Append>true</Append>
+	    <File>D:/weblogs/SimpleWeb/mongolog.txt</File>
+	    <encoder>
+	      <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} [%file:%line] %msg%n</pattern>
+	    </encoder>
+	    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+	      <fileNamePattern>D:/weblogs/SimpleWeb/mongolog.%d{yyyy-MM-dd}.txt</fileNamePattern>
+	    </rollingPolicy>
+	</appender>
+	
+	<logger name="org.springframework.data.mongodb.core" level="INFO">
+    	<appender-ref ref="mongodb"/>
+  	</logger>
+  	
+  	<root level="DEBUG">
+	    <appender-ref ref="CONSOLE"/>
+	    <appender-ref ref="mongodb"/>
+	</root>
+  	
+</configuration>

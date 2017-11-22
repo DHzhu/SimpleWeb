@@ -5,7 +5,7 @@ package com.dao;
 
 import java.util.List;
 
-import com.model.PicInfoObject;
+import com.model.Spider;
 
 /**
  * @desc  : TODO
@@ -13,9 +13,9 @@ import com.model.PicInfoObject;
  * @date  : 2017年11月17日
  */
 public interface MongoDao {
-	public List<PicInfoObject> search(PicInfoObject object, long skip, Integer limit);
-	public void findAndModify(PicInfoObject search, PicInfoObject update);
-	public void insert(List<PicInfoObject> object);
-	public void remove(PicInfoObject object);
+	public List<Spider> search(Spider object, long skip, Integer limit);
+	public void findAndModify(Spider search, Spider update);
+	public void insert(List<Spider> object);
+	public void remove(Spider object);
 	
 }

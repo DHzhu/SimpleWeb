@@ -3,22 +3,29 @@
  */
 package com.model;
 
-import java.io.Serializable;
-
 /**
  * @desc  : TODO
  * @author: Zhu
  * @date  : 2017年11月17日
  */
-public class PicInfoObject implements Serializable{
+public class Spider extends BaseEntiy{
 
 	private static final long serialVersionUID = 1L;
 	
 	private String _id;
+	
+
 	private String columnUrl;
+	
+
 	private String fileUrl;
+	
+
 	private String fileName;
+	
+
 	private String saveTime;
+	
 	private Integer isScan = 1;
 	private Integer isNew;
 	private Integer isChild;

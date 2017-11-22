@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author: Zhu
  * @date  : 2017年7月4日
  */
-@SuppressWarnings("restriction")
 @Controller
 public class IndexController {
 	

@@ -57,6 +57,9 @@
 			<ul class="submenu">
 				<li><a class="vmenu" href="#" onclick="showPage('ackChatPage.do')">消息推送AckChat</a></li>
 			</ul>
+			<ul class="submenu">
+				<li><a class="vmenu" href="#" onclick="showPage('picPage.do')">图片展示</a></li>
+			</ul>
 		</li>
 
 		<li>

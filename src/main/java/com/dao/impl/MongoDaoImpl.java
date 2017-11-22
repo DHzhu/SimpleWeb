@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
 
 import com.dao.MongoDao;
 import com.github.pagehelper.StringUtil;
-import com.model.PicInfoObject;
+import com.model.Spider;
 
 /**
  * @desc  : TODO
@@ -31,14 +31,14 @@ public class MongoDaoImpl implements MongoDao{
 	 * @date : 2017年11月17日
 	 */
 	@Override
-	public List<PicInfoObject> search(PicInfoObject object, long skip, Integer limit) {
+	public List<Spider> search(Spider object, long skip, Integer limit) {
 		// TODO Auto-generated method stub
 		Query query = defineQuery(object);
-		query.skip(skip);
+		query.skip(0);
 		if(limit != null) {
 			query.limit(limit);
 		}
-		return this.mongoTemplate.find(query, PicInfoObject.class);
+		return this.mongoTemplate.find(query, Spider.class);
 	}
 
 	/**
@@ -46,13 +46,13 @@ public class MongoDaoImpl implements MongoDao{
 	 * @date : 2017年11月17日
 	 */
 	@Override
-	public void findAndModify(PicInfoObject search, PicInfoObject update) {
+	public void findAndModify(Spider search, Spider update) {
 		// TODO Auto-generated method stub
 		Query query = defineQuery(search);
 		Update up = Update.update("isNew", update.getIsNew())
 				.set("isScan", update.getIsScan())
 				.set("isValid", update.getIsValid());
-		this.mongoTemplate.findAndModify(query, up, PicInfoObject.class);
+		this.mongoTemplate.findAndModify(query, up, Spider.class);
 	}
 
 	/**
@@ -60,7 +60,7 @@ public class MongoDaoImpl implements MongoDao{
 	 * @date : 2017年11月17日
 	 */
 	@Override
-	public void insert(List<PicInfoObject> object) {
+	public void insert(List<Spider> object) {
 		// TODO Auto-generated method stub
 		this.mongoTemplate.insert(object);
 	}
@@ -70,7 +70,7 @@ public class MongoDaoImpl implements MongoDao{
 	 * @date : 2017年11月17日
 	 */
 	@Override
-	public void remove(PicInfoObject object) {
+	public void remove(Spider object) {
 		// TODO Auto-generated method stub
 		this.mongoTemplate.remove(search(object, 0 ,null));
 	}
@@ -79,22 +79,22 @@ public class MongoDaoImpl implements MongoDao{
         this.mongoTemplate = mongoTemplate;
 	}
 	
-	private Query defineQuery(PicInfoObject object) {
+	private Query defineQuery(Spider object) {
 		if(object == null) {
-			object = new PicInfoObject();
+			object = new Spider();
 		}
 		Query query = new Query();
-		if(StringUtil.isEmpty(object.get_id())) {
+		if(!StringUtil.isEmpty(object.get_id())) {
 			Criteria criteria = Criteria.where("_id").is(object.get_id());
 			query.addCriteria(criteria);
 		}
 		
-		if(StringUtil.isEmpty(object.getColumnUrl())) {
+		if(!StringUtil.isEmpty(object.getColumnUrl())) {
 			Criteria criteria = Criteria.where("columnUrl").is(object.getColumnUrl());
 			query.addCriteria(criteria);
 		}
 		
-		if(StringUtil.isEmpty(object.getFileUrl())) {
+		if(!StringUtil.isEmpty(object.getFileUrl())) {
 			Criteria criteria = Criteria.where("fileUrl").is(object.getFileUrl());
 			query.addCriteria(criteria);
 		}
