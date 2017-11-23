@@ -21,7 +21,7 @@ import com.service.ShowLogService;
 @Service
 public class ShowLogServiceImpl implements ShowLogService{
 	
-	private File LogFile = new File("D:/weblogs/SimpleWeb/infolog.txt");
+	private File LogFile = new File("D:/weblogs/SimpleWeb/infolog.log");
 
 	/**
 	 * @desc : TODO

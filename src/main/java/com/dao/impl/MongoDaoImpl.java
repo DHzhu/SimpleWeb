@@ -34,7 +34,7 @@ public class MongoDaoImpl implements MongoDao{
 	public List<Spider> search(Spider object, long skip, Integer limit) {
 		// TODO Auto-generated method stub
 		Query query = defineQuery(object);
-		query.skip(0);
+		query.skip(skip);
 		if(limit != null) {
 			query.limit(limit);
 		}

@@ -3,7 +3,7 @@
  */
 package com.socket;
 
-import org.apache.commons.logging.Log;
+import org.apache.logging.log4j.Logger;
 
 import com.corundumstudio.socketio.AckCallback;
 import com.corundumstudio.socketio.AckRequest;
@@ -21,8 +21,8 @@ import com.utils.LogUtil;
  * @date  : 2017年7月6日
  */
 public class AckChatLauncher {
-	private final Log log = LogUtil.getLog("Info_Log");
 
+	private Logger log = LogUtil.getLogger("infolog");
 	private static SocketIOServer ackServer = null;
 	
 	public AckChatLauncher(){
@@ -43,7 +43,7 @@ public class AckChatLauncher {
                 client.sendEvent("ackevent2", new AckCallback<String>(String.class) {
                     @Override
                     public void onSuccess(String result) {
-                        log.info("ack from client: " + client.getSessionId() + " data: " + result);
+                    	log.info("ack from client: " + client.getSessionId() + " data: " + result);
                     }
                 }, ackData);
                 
@@ -52,7 +52,7 @@ public class AckChatLauncher {
                     @Override
 					protected void onSuccess() {
 						// TODO Auto-generated method stub
-						log.info("void ack from client: " + client.getSessionId());
+                    	log.info("void ack from client: " + client.getSessionId());
 					}
                 }, ackDataVoid);
             }

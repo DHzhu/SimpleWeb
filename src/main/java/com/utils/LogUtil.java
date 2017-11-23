@@ -1,7 +1,9 @@
 package com.utils;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 /**
  * Name:LogUtil
@@ -10,12 +12,12 @@ import org.apache.commons.logging.LogFactory;
  * @date 2016年5月24日
  */
 public class LogUtil {
-	/**
-	 * Desc:TODO
-	 * @author zhu
-	 * @date 2016年5月24日
-	 */
-	public static Log getLog(String logName){
-		return LogFactory.getLog(logName);
-	}
+
+    public static Logger getLogger(String name) {  
+        if(StringUtils.isEmpty(name)) {
+        	name = "default";
+        }
+        
+        return LogManager.getLogger(name);
+    }  
 }

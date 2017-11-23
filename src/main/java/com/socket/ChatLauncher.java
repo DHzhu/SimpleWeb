@@ -3,7 +3,7 @@
  */
 package com.socket;
 
-import org.apache.commons.logging.Log;
+import org.apache.logging.log4j.Logger;
 
 import com.corundumstudio.socketio.AckRequest;
 import com.corundumstudio.socketio.Configuration;
@@ -19,7 +19,7 @@ import com.utils.LogUtil;
  * @date  : 2017年7月6日
  */
 public class ChatLauncher {
-	private final Log log = LogUtil.getLog("Info_Log");
+	private Logger log = LogUtil.getLogger("infolog");
 
 	private static SocketIOServer ChatServer = null;
 	
@@ -36,7 +36,7 @@ public class ChatLauncher {
             public void onData(SocketIOClient client, InfoObject data, AckRequest ackRequest) {
                 // broadcast messages to all clients
             	ChatServer.getBroadcastOperations().sendEvent("chatevent", data);
-                log.info(data.getUserName() + ":" + data.getMessage());
+            	log.info(data.getUserName() + ":" + data.getMessage());
             }
         });
 	}
