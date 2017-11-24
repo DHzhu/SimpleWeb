@@ -2,14 +2,19 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page isELIgnored="false"%>
 <style>
-	.quarterli > li{
-		float: left;
-	  	width: 25%;
-	  	height: 25%;
-	  	margin: 0 -1px -1px 0;
-	  	border: 1px solid transparent;
-	  	overflow: hidden;
-	}
+.quarterli > li{
+	float: left;
+	width: 20%;
+	height: 20%;
+	margin: 0 -1px -1px 0;
+	border: 1px solid transparent;
+	overflow: hidden;
+}
+.quarterli > li > img {
+	width: 100%;
+	cursor: -webkit-zoom-in;
+	cursor: zoom-in;
+}
 </style>
 <script type="text/javascript">
 	var pageUrl = "pic.do";
@@ -21,36 +26,36 @@
 			timeout : 30000,
 			data : {},
 			success : function(data) {
-
+				$("#viewers").empty();
+				var htmlStr = "";
+				for(var i = 0; i < data.length; i++){
+					htmlStr += "<li><img src='" + data[0].fileUrl + "'></li>";
+				}
+				$("#viewers").append(htmlStr);
+				startShow();
 			}
 		});
 	};
 
 	var startShow = function() {
-		console.log("test");
 		var options = {
 				"navbar":false,
 				"movable":false,
 				"title":false
 		};
-		$(".images").viewer(options);
-		$('#myModal').modal("show");
+		$("#viewers").viewer(options);
+		//$('#myModal').modal("show");
 	};
 	$(function() {
-		//showInfo();
+		showInfo();
 	});
 </script>
 <div id="pad-wrapper" class="form-page">
 	<form>
 		<div class="field-box">
 			<div class="col-md-12">
-				<a class="btn-glow primary" onclick="startShow()" id="start" >显示</a>
-			</div>
-		</div>
-		<div class="field-box">
-			<div class="col-md-12">
-				<div>
-					<ul id="viewers" class="images quarterli">
+				<div style="max-height:600px;overflow-y:scroll;">
+					<ul id="viewers" class="images quarterli" style="">
 						<li><img src="public/img/contact-img.png"></li>
 						<li><img src="public/img/contact-img.png"></li>
 						<li><img src="public/img/contact-img.png"></li>
