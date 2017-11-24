@@ -42,6 +42,7 @@ public class ShowLogServiceImpl implements ShowLogService{
 			String temp = "";
 			int lines = 0;
 			while((temp = randomFile.readLine()) != null){
+				temp = new String(temp.getBytes("8859_1"), "utf-8");
 				builder.append(temp);
 				builder.append("\n");
 				if(lines++ > 10){
