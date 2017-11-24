@@ -2,8 +2,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page isELIgnored="false" %>
 
-<link href="<%=request.getContextPath()%>/public/css/compiled/form-showcase.css" rel="stylesheet" type="text/css">
-
 <script type="text/javascript">
 	var pageUrl = "showLog.do";
 	var preSize = 0;

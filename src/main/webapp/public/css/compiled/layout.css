@@ -107,7 +107,7 @@ input.search {
   border-radius: 30px;
   color: #fff;
   line-height: 16px;
-  z-index: 9999;
+  z-index: 9998;
   text-align: center;
   font-size: 11px;
 }

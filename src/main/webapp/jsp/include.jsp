@@ -6,7 +6,8 @@
 <link href="<%=request.getContextPath()%>/public/css/compiled/layout.css" rel="stylesheet" type="text/css">
 <link href="<%=request.getContextPath()%>/public/css/compiled/elements.css" rel="stylesheet" type="text/css">
 <link href="<%=request.getContextPath()%>/public/css/compiled/icons.css" rel="stylesheet" type="text/css">
-
+<link href="<%=request.getContextPath()%>/public/css/compiled/form-showcase.css" rel="stylesheet" type="text/css">
+<link href="<%=request.getContextPath()%>/public/css/lib/viewer.css" rel="stylesheet" type="text/css">
 <!-- libraries -->
 <link href="<%=request.getContextPath()%>/public/css/lib/font-awesome.css" rel="stylesheet" type="text/css">
 
@@ -20,3 +21,5 @@
 
 <script src="<%=request.getContextPath()%>/public/js/bootstrap-paginator.js"></script>
 <script src="<%=request.getContextPath()%>/public/js/common.js"></script>
+
+<script src="<%=request.getContextPath()%>/public/js/viewer.js"></script>
