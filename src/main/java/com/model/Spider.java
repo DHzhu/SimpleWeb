@@ -27,7 +27,7 @@ public class Spider extends BaseEntiy{
 	private String saveTime;
 	
 	private Integer isScan = 1;
-	private Integer isNew;
+	private Integer isNew = 1;
 	private Integer isChild;
 	private Integer isValid = 1;
 	

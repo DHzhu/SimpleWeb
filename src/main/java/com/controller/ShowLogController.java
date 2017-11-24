@@ -31,7 +31,7 @@ public class ShowLogController {
 	}
 	
 	@RequestMapping(value = "/showLog.do")
-	public @ResponseBody Map<String, Object> getInfoByPage(long preSize){
+	public @ResponseBody Map<String, Object> showLog(long preSize){
 		Map<String, Object> map = new HashMap<>();
 		map = showLogService.getLogInfo(preSize);
 		return map;

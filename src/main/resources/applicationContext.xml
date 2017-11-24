@@ -22,6 +22,9 @@
 	<!-- 加载配置属性文件 -->
 	<context:property-placeholder ignore-unresolvable="true" location="classpath:jdbc.properties" />
 	
+	<!-- 加载配置文件信息 -->
+    <bean id="config" class="com.utils.Config" init-method="init" />
+	
 	<!-- 中文乱码问题 -->
 	<bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter">
         <property name="supportedMediaTypes">

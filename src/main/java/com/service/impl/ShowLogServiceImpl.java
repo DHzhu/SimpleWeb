@@ -12,6 +12,7 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 import com.service.ShowLogService;
+import com.utils.Constants;
 
 /**
  * @desc  : TODO
@@ -21,7 +22,7 @@ import com.service.ShowLogService;
 @Service
 public class ShowLogServiceImpl implements ShowLogService{
 	
-	private File LogFile = new File("D:/weblogs/SimpleWeb/infolog.log");
+	private File LogFile = null;
 
 	/**
 	 * @desc : TODO
@@ -34,6 +35,7 @@ public class ShowLogServiceImpl implements ShowLogService{
 		StringBuilder builder = new StringBuilder();
 		RandomAccessFile randomFile = null;
 		try {
+			LogFile = new File(Constants.LOGFILE);
 			randomFile = new RandomAccessFile(LogFile,"r");
 			randomFile.seek(preSize);
 			

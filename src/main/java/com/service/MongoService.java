@@ -14,4 +14,10 @@ import com.model.Spider;
  */
 public interface MongoService {
 	public List<Spider> search(Spider object);
+	
+	public void insert(List<Spider> list);
+	
+	public void update(Spider old, Spider fresh);
+	
+	public Spider find(Spider spider);
 }
