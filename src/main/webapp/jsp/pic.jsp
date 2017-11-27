@@ -29,7 +29,7 @@
 				$("#viewers").empty();
 				var htmlStr = "";
 				for(var i = 0; i < data.length; i++){
-					htmlStr += "<li><img src='" + data[0].fileUrl + "'></li>";
+					htmlStr += "<li><img src='http://local.static" + data[i].fileUrl + "'></li>";
 				}
 				$("#viewers").append(htmlStr);
 				startShow();
@@ -55,11 +55,7 @@
 		<div class="field-box">
 			<div class="col-md-12">
 				<div style="max-height:600px;overflow-y:scroll;">
-					<ul id="viewers" class="images quarterli" style="">
-						<li><img src="public/img/contact-img.png"></li>
-						<li><img src="public/img/contact-img.png"></li>
-						<li><img src="public/img/contact-img.png"></li>
-						<li><img src="public/img/select2/spinner.gif"></li>
+					<ul id="viewers" class="images quarterli">
 					</ul>
 				</div>
 			</div>
